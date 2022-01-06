@@ -23,16 +23,16 @@ source "$PWD/aliases/misc"
 if [ "$forced" != "true" ]; then
     buo .Xmodmap .vim .vimrc .tmux.conf .aliases .gitconfig .gitconfig.secret .condarc .zshrc .oh-my-zsh .fzf
 fi
-ln -sf $DOT_DIR/Xmodmap $HOME/.Xmodmap 
-ln -sf $DOT_DIR/vimrc $HOME/.vimrc
-ln -sf $DOT_DIR/tmux.conf $HOME/.tmux.conf
-ln -sf $DOT_DIR/aliases $HOME/.aliases
-ln -sf $DOT_DIR/gitconfig $HOME/.gitconfig
-ln -sf $DOT_DIR/condarc $HOME/.condarc
-ln -sf $DOT_DIR/zshrc $HOME/.zshrc
+ln -sf $DOT_DIR/Xmodmap $HOME/.Xmodmap # key mapping 
+ln -sf $DOT_DIR/vimrc $HOME/.vimrc # vim confnigs
+ln -sf $DOT_DIR/tmux.conf $HOME/.tmux.conf # tmux configs
+ln -sf $DOT_DIR/aliases $HOME/.aliases # zsh aliases
+ln -sf $DOT_DIR/gitconfig $HOME/.gitconfig # git configs
+ln -sf $DOT_DIR/condarc $HOME/.condarc # conda configs
+ln -sf $DOT_DIR/zshrc $HOME/.zshrc # zsh configs
 echo; echo '** download oh-my-zsh.'
 bash $DOT_DIR/install-omz.sh; 
-ln -sf $DOT_DIR/themes/mrtazz_custom.zsh-theme $HOME/.oh-my-zsh/themes/
+# ln -sf $DOT_DIR/themes/mrtazz_custom.zsh-theme $HOME/.oh-my-zsh/themes/
 
 
 #==================================================#
@@ -40,8 +40,6 @@ ln -sf $DOT_DIR/themes/mrtazz_custom.zsh-theme $HOME/.oh-my-zsh/themes/
 
 # zsh
 echo; echo '** download zsh plugins.'
-## alias-tip 
-git clone https://github.com/djui/alias-tips.git ${ZSH_CUSTOM:-$ZSH/custom}/plugins/alias-tips
 ## zsh-syntax-highlighting 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$ZSH/custom}/plugins/zsh-syntax-highlighting
 ## zsh-autosuggestions
@@ -49,12 +47,19 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$ZSH/cu
 ## fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
 $HOME/.fzf/install --all
+## zsh theme
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+
 
 # vim 
 echo; echo '** download vim plugins.'
 ## colorschemes
 mkdir $HOME/.vim
 git clone https://github.com/flazz/vim-colorschemes.git $HOME/.vim
+## vim plugin
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ## pathogen: vim plugins manager
 mkdir -p $HOME/.vim/autoload $HOME/.vim/bundle && curl -LSso $HOME/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 ## nerdtree: file/directory browser
@@ -75,6 +80,8 @@ git clone https://github.com/ctrlpvim/ctrlp.vim.git $HOME/.vim/bundle/ctrlp.vim
 vim -u NONE -c "helptags $HOME/.vim/bundle/ctrlp.vim/doc" -c q
 ## vim themes
 git clone https://github.com/mhartington/oceanic-next.git $HOME/.vim/bundle/oceanic-next
+## supertab
+git clone --depth=1 https://github.com/ervandew/supertab.git $HOME/.vim/pack/plugins/start/supertab
 
 #==================================================#
 # anaconda3

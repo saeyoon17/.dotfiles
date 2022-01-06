@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# backup existing dotfiles. 
+# backup existing dotfiles.
 # (buo : back-up-original)
 function buo(){
     backup_dir="$HOME/dotfiles_backup"
@@ -19,9 +19,21 @@ function buo(){
 # visdom
 alias vis='python -m visdom.server'
 
-# jupyter notebook
-alias jn='jupyter notebook'
-alias jna='jupyter notebook --ip 0.0.0.0'
+# jupyterlab
+alias jl='jupyter lab'
+alias jla='jupyter lab --ip 0.0.0.0'
+
+# tensorboard
+function tsbwrapper(){
+    tensorboard --bind_all --port $1  --logdir $2
+
+}
+function tsbswrapper(){
+    tensorboard --bind_all --port $1  --logdir $2 --samples_per_plugin images=0,scalars=0
+
+}
+alias tsb='tsbwrapper'
+alias tsbs='tsbswrapper'
 
 # gpu
 alias gpu="watch --color -n.5 gpustat --color"
@@ -58,7 +70,7 @@ alias jnaa='sa pth && jupyter-notebook --port 8888 --ip 0.0.0.0'
 function myrsync(){
     port=$1
     remainder=$2
-    cmd="rsync -avzhe 'ssh -p ${port}' ${remainder}" 
+    cmd="rsync -avzhe 'ssh -p ${port}' ${remainder}"
     echo $cmd
     eval $cmd
 }

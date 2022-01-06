@@ -3,6 +3,10 @@
 execute pathogen#infect()
 filetype plugin indent on
 
+" vim plugin
+call plug#begin('~/.vim/plugged')
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+call plug#end()
 
 " =============== general ============= "
 if filereadable('/bin/zsh')
@@ -33,27 +37,18 @@ set incsearch	            " incremental search
 set hlsearch				" highlight search keyword
 
 " color settings
+
+syntax on
 set t_Co=256
-set t_ut=
-set background=dark
-
-" colorscheme xoria256
-" colorscheme afterglow 
-
-" set termguicolors     " enable true colors support
-" let ayucolor="light"  " for light version of theme
-" let ayucolor="mirage" " for mirage version of theme
-" let ayucolor="dark"   " for dark version of theme
-" colorscheme ayu
-
-syntax enable
-set t_Co=256
-if (has("termguicolors"))
-set termguicolors
+set cursorline
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
 endif
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
-colorscheme OceanicNext
+colorscheme onehalfdark
+" lightline
+" let g:lightline = { 'colorscheme': 'onehalfdark' }
 
 " copy-paste
 set pastetoggle=<F8>		                " this will disable auto indent when pasting
@@ -77,7 +72,7 @@ let mapleader=","           " comma is the <Leader> key.
 let maplocalleader=","      " comma : <LocalLeader>
 
 nnoremap <leader>R :so $MYVIMRC<CR> " reload vimrc in current vim
-" nnoremap <F2> :noh<CR>              " turn off search highlight until the next search
+nnoremap <F2> :noh<CR>              " turn off search highlight until the next search
 nnoremap @ :noh<CR>              " turn off search highlight until the next search
 nnoremap <F9> :set invnumber<CR>    " toggle line number (for the sake of copying text without line numbers)
 nnoremap <leader>s :w<CR>           " write/save
@@ -109,6 +104,7 @@ set encoding=utf-8 " fix the issue of being unable to open files outside current
 
 " jedi-vim
 " https://github.com/davidhalter/jedi-vim/blob/master/doc/jedi-vim.txt
+let g:jedi#completions_command="<tab>"
 let g:jedi#goto_command="<leader>d"
 let g:jedi#goto_assignments_command="<leader>g"
 let g:jedi#completions_enabled=1
@@ -125,15 +121,18 @@ autocmd FileType python setlocal completeopt-=preview
 " https://github.com/vim-airline/vim-airline#smarter-tab-line
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#show_buffers=1
-let g:airline#extensions#tabline#formatter='unique_tail' " 
-let g:airline_theme='bubblegum'
-let g:airline_section_b = '%{strftime("%a %H:%M:%S %Y-%m-%d")}'
+let g:airline#extensions#tabline#formatter='default'
+let g:airline_theme='onehalfdark'
+" let g:airline_section_b = '%{strftime("%a %H:%M:%S %Y-%m-%d")}'
 set laststatus=2                " turn on bottom bar
 
 " vim-flake8
 autocmd FileType python map <buffer> <F5> :call flake8#Flake8()<CR>
 nnoremap <F6> :cclose<CR>
 let g:flake8_quickfix_height=25
+
+" supertab
+packloadall
 
 " remove trailing whitespaces from all lines
 " https://vi.stackexchange.com/questions/454/whats-the-simplest-way-to-strip-trailing-whitespace-from-all-lines-in-a-file

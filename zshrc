@@ -24,16 +24,33 @@ export LS_COLORS=$(cat $MYDOTFILES/LS_COLORS)
 
 # OH-MY-ZSH
 # themes: https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="mrtazz_custom"   # set zsh theme
+# ZSH_THEME="mrtazz_custom"   # set zsh theme
+
+ZSH_THEME="spaceship"
+SPACESHIP_USER_SHOW="always"
+SPACESHIP_USER_COLOR="green"
+SPACESHIP_DIR_COLOR="blue"
+SPACESHIP_PROMPT_ORDER=(
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  line_sep      # Line break
+  vi_mode       # Vi-mode indicator
+  char          # Prompt character
+)
 DISABLE_AUTO_UPDATE="true"  # no automatically update oh-my-zsh
 HIST_STAMPS="mm/dd/yyyy"    # history with date stamps
 
 # zsh plugins
 plugins=(
-  # git
-  # alias-tips
   zsh-syntax-highlighting
   zsh-autosuggestions
+  copydir
+  copybuffer
+  dirhistory
+  history
+  fzf
 )
 
 source $ZSH/oh-my-zsh.sh

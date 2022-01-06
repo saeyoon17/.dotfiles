@@ -12,3 +12,6 @@
 
 [status]
     showUntrackedFiles = all
+[user]
+	email = kdgyun425@gmail.com
+	name = GitGyun
