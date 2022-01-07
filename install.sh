@@ -82,6 +82,8 @@ vim -u NONE -c "helptags $HOME/.vim/bundle/ctrlp.vim/doc" -c q
 git clone https://github.com/mhartington/oceanic-next.git $HOME/.vim/bundle/oceanic-next
 ## supertab
 git clone --depth=1 https://github.com/ervandew/supertab.git $HOME/.vim/pack/plugins/start/supertab
+# install vim plugins
+vim +'PlugInstall --sync' +qa
 
 #==================================================#
 # anaconda3
