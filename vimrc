@@ -5,7 +5,10 @@ filetype plugin indent on
 
 " vim plugin
 call plug#begin('~/.vim/plugged')
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
+" Plug 'sonph/onehalf', { 'rtp': 'vim' }
+" Plug 'sainnhe/everforest'
+Plug 'sainnhe/sonokai'
+Plug 'vim-python/python-syntax'
 call plug#end()
 
 " =============== general ============= "
@@ -14,6 +17,7 @@ if filereadable('/bin/zsh')
 endif
 
 syntax on					" syntax highligting
+let g:python_highlight_all=1
 set nocompatible
 set cursorline              " highlight current cursorline
 set ruler		            " show row/col info
@@ -38,7 +42,6 @@ set hlsearch				" highlight search keyword
 
 " color settings
 
-syntax on
 set t_Co=256
 set cursorline
 if exists('+termguicolors')
@@ -46,9 +49,17 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
-colorscheme onehalfdark
-" lightline
+set background=dark
+" let g:everforest_background = 'medium'
+" colorscheme everforest 
+" let g:lightline = { 'colorscheme': 'everforest' }
+" colorscheme onehalfdark 
 " let g:lightline = { 'colorscheme': 'onehalfdark' }
+let g:sonokai_style = 'andromeda'
+let g:sonokai_enable_italic = 1
+let g:sonokai_disable_italic_comment = 1
+colorscheme sonokai
+let g:lightline = { 'colorscheme': 'soonkai' }
 
 " copy-paste
 set pastetoggle=<F8>		                " this will disable auto indent when pasting
@@ -122,7 +133,9 @@ autocmd FileType python setlocal completeopt-=preview
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#show_buffers=1
 let g:airline#extensions#tabline#formatter='default'
-let g:airline_theme='onehalfdark'
+" let g:airline_theme='onehalfdark'
+" let g:airline_theme = 'everforest'
+let g:airline_theme='sonokai'
 " let g:airline_section_b = '%{strftime("%a %H:%M:%S %Y-%m-%d")}'
 set laststatus=2                " turn on bottom bar
 
