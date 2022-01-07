@@ -30,8 +30,8 @@ export LS_COLORS=$(cat $MYDOTFILES/LS_COLORS)
 ZSH_THEME="spaceship"
 SPACESHIP_USER_SHOW="always"
 SPACESHIP_USER_COLOR="green"
-SPACESHIP_DIR_COLOR="blue"
-SPACESHIP_DIR_LOCK_SYMBOL=""
+SPACESHIP_DIR_COLOR="38"
+SPACESHIP_GIT_BRANCH_COLOR="red"
 SPACESHIP_PROMPT_ORDER=(
   user          # Username section
   dir           # Current directory section
