@@ -7,9 +7,9 @@ export PATH=$HOME/.local/bin:$PATH
 export MYVIMRC=$HOME/.vimrc
 export SHELL=$(which zsh)
 export ZSH=$HOME/.oh-my-zsh # oh-my-zsh
-export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
-export LC_ALL=C
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 export MYDOTFILES=$HOME/.dotfiles
 
 
@@ -32,6 +32,7 @@ SPACESHIP_USER_SHOW="always"
 SPACESHIP_USER_COLOR="green"
 SPACESHIP_DIR_COLOR="38"
 SPACESHIP_GIT_BRANCH_COLOR="red"
+SPACESHIP_CHAR_SYMBOL='➜'
 SPACESHIP_PROMPT_ORDER=(
   user          # Username section
   dir           # Current directory section

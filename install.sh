@@ -50,6 +50,9 @@ $HOME/.fzf/install --all
 ## zsh theme
 git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+## zsh theme fix
+rm $HOME/.oh-my-zsh/custom/themes/spaceship-prompt/lib/section.zsh
+cp $DOT_DIR/fixes/section.zsh $HOME/.oh-my-zsh/custom/themes/spaceship-prompt/lib/
 
 
 # vim 
@@ -78,12 +81,13 @@ vim -u NONE -c "helptags commentary/doc" -c q
 ## ctrlp.vim
 git clone https://github.com/ctrlpvim/ctrlp.vim.git $HOME/.vim/bundle/ctrlp.vim
 vim -u NONE -c "helptags $HOME/.vim/bundle/ctrlp.vim/doc" -c q
-## vim themes
-git clone https://github.com/mhartington/oceanic-next.git $HOME/.vim/bundle/oceanic-next
 ## supertab
 git clone --depth=1 https://github.com/ervandew/supertab.git $HOME/.vim/pack/plugins/start/supertab
 # install vim plugins
 vim +'PlugInstall --sync' +qa
+# custom vim color settings
+rm $HOME/.vim/plugged/sonokai/colors/sonokai.vim
+cp $DOT_DIR/fixes/sonokai.vim $HOME/.vim/plugged/sonokai/colors/
 
 #==================================================#
 # anaconda3
