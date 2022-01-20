@@ -52,7 +52,7 @@ git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 ## zsh theme fix
 rm $HOME/.oh-my-zsh/custom/themes/spaceship-prompt/lib/section.zsh
-cp $DOT_DIR/fixes/section.zsh $HOME/.oh-my-zsh/custom/themes/spaceship-prompt/lib/
+ln -sf $DOT_DIR/fixes/section.zsh $HOME/.oh-my-zsh/custom/themes/spaceship-prompt/lib/
 
 
 # vim 
@@ -87,7 +87,7 @@ git clone --depth=1 https://github.com/ervandew/supertab.git $HOME/.vim/pack/plu
 vim +'PlugInstall --sync' +qa
 # custom vim color settings
 rm $HOME/.vim/plugged/sonokai/colors/sonokai.vim
-cp $DOT_DIR/fixes/sonokai.vim $HOME/.vim/plugged/sonokai/colors/
+ln -sf $DOT_DIR/fixes/sonokai.vim $HOME/.vim/plugged/sonokai/colors/
 
 #==================================================#
 # anaconda3
