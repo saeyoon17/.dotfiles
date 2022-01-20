@@ -8,7 +8,7 @@ spaceship::section() {
   local color prefix content suffix
   [[ -n $1 ]] && color="%F{$1}"  || color="%f"
   [[ -n $2 ]] && prefix="$2"     || prefix=""
-  [[ -n $3 ]] && content="%{%G$3%} "    || content=""
+  [[ -n $3 ]] && content="$3"    || content=""
   [[ -n $4 ]] && suffix="$4"     || suffix=""
 
   [[ -z $3 && -z $4 ]] && content=$2 prefix=''

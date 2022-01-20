@@ -32,7 +32,7 @@ SPACESHIP_USER_SHOW="always"
 SPACESHIP_USER_COLOR="green"
 SPACESHIP_DIR_COLOR="38"
 SPACESHIP_GIT_BRANCH_COLOR="red"
-SPACESHIP_CHAR_SYMBOL='➜'
+SPACESHIP_CHAR_SYMBOL='%{%G➜%} '
 SPACESHIP_PROMPT_ORDER=(
   user          # Username section
   dir           # Current directory section
