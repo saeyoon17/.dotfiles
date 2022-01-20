@@ -1783,7 +1783,7 @@ highlight! link pythonRepeat Red
 highlight! link pythonException Red
 highlight! link pythonNone OrangeItalic
 highlight! link pythonCoding Grey
-highlight! link pythonDot Grey
+highlight! link pythonDot Red 
 " }}}
 " semshi: https://github.com/numirias/semshi{{{
 call sonokai#highlight('semshiUnresolved', s:palette.orange, s:palette.none, 'undercurl')
