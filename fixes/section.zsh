@@ -28,6 +28,7 @@ spaceship::section() {
   if [[ $SPACESHIP_PROMPT_SUFFIXES_SHOW == true ]]; then
     echo -n "$suffix"
   fi
+
   echo -n "%{%b%}" # unset bold
 }
 
@@ -45,11 +46,24 @@ spaceship::compose_prompt() {
   # Compose whole prompt from diferent parts
   # If section is a defined function then invoke it
   # Otherwise render the 'not found' section
+  declare -i i
+  i=2
   for section in $@; do
+    i=`expr $i + 1`
+
+    if [ "$i" = "$#" ]; then
+      if [[ ! -z "$CUDA_VISIBLE_DEVICES" ]]; then
+        echo -n "| %{$FG[141]%}cuda:${CUDA_VISIBLE_DEVICES}"
+      else
+        echo -n ""
+      fi
+    fi
+
     if spaceship::defined "spaceship_$section"; then
       spaceship_$section
     else
       spaceship::section 'red' "'$section' not found"
     fi
   done
+
 }
