@@ -1,0 +1,9 @@
+{
+    "continuousHinting": false,
+    "kernelResponseTimeout": 1000,
+    "suppressTriggerCharacterIn": [
+        "comment",
+        "string",
+        "def"
+    ],
+}
