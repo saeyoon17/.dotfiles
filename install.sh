@@ -107,6 +107,16 @@ then
     fi
 fi
 
+# jupyterlab configs
+if [ -d "$HOME/.jupyter/lab" ];
+then
+    pip install theme-darcula
+    pip install jupyterlab-lsp
+    pip install flake8 importlib-metadata --upgrade
+    pip install 'python-lsp-server[all]'
+    pip install git+https://github.com/krassowski/python-language-server.git@main
+    cp -r $DOT_DIR/jupyterlab_configs/* $HOME/.jupyter/lab/user-settings
+fi
 
 #==================================================#
 # set zsh to the default shell
