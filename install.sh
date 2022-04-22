@@ -53,6 +53,7 @@ ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/the
 ## zsh theme fix
 rm $HOME/.oh-my-zsh/custom/themes/spaceship-prompt/lib/section.zsh
 ln -sf $DOT_DIR/fixes/section.zsh $HOME/.oh-my-zsh/custom/themes/spaceship-prompt/lib/
+cp $DOT_DIR/fixes/cuda.zsh $HOME/.oh-my-zsh/custom/themes/spaceship-prompt/sections/
 
 
 # vim 

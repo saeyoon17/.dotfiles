@@ -31,6 +31,7 @@ ZSH_THEME="spaceship"
 SPACESHIP_USER_SHOW="always"
 SPACESHIP_USER_COLOR="green"
 SPACESHIP_DIR_COLOR="38"
+SPACESHIP_GIT_SHOW="true"
 SPACESHIP_GIT_BRANCH_COLOR="red"
 SPACESHIP_CHAR_SYMBOL='%{%G➜%} '
 SPACESHIP_PROMPT_ORDER=(
@@ -38,6 +39,7 @@ SPACESHIP_PROMPT_ORDER=(
   dir           # Current directory section
   host          # Hostname section
   git           # Git section (git_branch + git_status)
+  cuda          # CUDA status
   line_sep      # Line break
   vi_mode       # Vi-mode indicator
   char          # Prompt character
