@@ -49,16 +49,6 @@ spaceship::compose_prompt() {
   declare -i i
   i=2
   for section in $@; do
-    i=`expr $i + 1`
-
-    if [ "$i" = "$#" ]; then
-      if [[ ! -z "$CUDA_VISIBLE_DEVICES" ]]; then
-        echo -n "| %{$FG[141]%}cuda:${CUDA_VISIBLE_DEVICES}"
-      else
-        echo -n ""
-      fi
-    fi
-
     if spaceship::defined "spaceship_$section"; then
       spaceship_$section
     else
