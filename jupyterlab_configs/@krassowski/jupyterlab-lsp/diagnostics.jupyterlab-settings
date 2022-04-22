@@ -1,0 +1,32 @@
+{
+    // Code Diagnostics
+    // @krassowski/jupyterlab-lsp:diagnostics
+    // LSP Diagnostics (linter results) settings.
+    // ******************************************
+
+    // Diagnostic codes to ignore
+    // Codes of diagnostics which should not be shown in the panel nor highlighted in the editor.
+    "ignoreCodes": [
+        "W391",
+        "E402",
+        "E303",
+        "W293",
+        "E501",
+        "E261",
+        "E127",
+        "W291",
+        "E115",
+        "E116",
+        "E113"
+    ],
+
+    // Diagnostic messages to ignore
+    // Regular expressions matching messages of diagnostics which should not be shown in the panel nor highlighted in the editor.
+    "ignoreMessagesPatterns": [
+        "Cyclomatic complexity too high: 77 \\(threshold 15\\)",
+        "Cyclomatic complexity too high: 22 \\(threshold 15\\)",
+        "Cyclomatic complexity too high: 69 \\(threshold 15\\)",
+        "Cyclomatic complexity too high: 21 \\(threshold 15\\)",
+        "E741 ambiguous variable name 'O'"
+    ]
+}
