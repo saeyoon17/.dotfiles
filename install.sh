@@ -116,6 +116,9 @@ then
     pip install flake8 importlib-metadata --upgrade
     pip install 'python-lsp-server[all]'
     pip install git+https://github.com/krassowski/python-language-server.git@main
+    if ! [ -d "$HOME/.jupyter/lab/user-settings" ]; then
+        mkdir $HOME/.jupyter/lab/user-settings
+    fi
     cp -r $DOT_DIR/jupyterlab_configs/* $HOME/.jupyter/lab/user-settings
 fi
 
