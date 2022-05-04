@@ -109,18 +109,15 @@ then
 fi
 
 # jupyterlab configs
-if [ -d "$HOME/.jupyter/lab" ];
-then
-    pip install theme-darcula
-    pip install jupyterlab-lsp
-    pip install flake8 importlib-metadata --upgrade
-    pip install 'python-lsp-server[all]'
-    pip install git+https://github.com/krassowski/python-language-server.git@main
-    if ! [ -d "$HOME/.jupyter/lab/user-settings" ]; then
-        mkdir $HOME/.jupyter/lab/user-settings
-    fi
-    cp -r $DOT_DIR/jupyterlab_configs/* $HOME/.jupyter/lab/user-settings
+pip install theme-darcula
+pip install jupyterlab-lsp
+pip install flake8 importlib-metadata --upgrade
+pip install 'python-lsp-server[all]'
+pip install git+https://github.com/krassowski/python-language-server.git@main
+if ! [ -d "$HOME/.jupyter/lab/user-settings" ]; then
+    mkdir $HOME/.jupyter/lab/user-settings
 fi
+cp -r $DOT_DIR/jupyterlab_configs/* $HOME/.jupyter/lab/user-settings
 
 #==================================================#
 # set zsh to the default shell
