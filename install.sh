@@ -88,7 +88,7 @@ git clone --depth=1 https://github.com/ervandew/supertab.git $HOME/.vim/pack/plu
 vim +'PlugInstall --sync' +qa
 # custom vim color settings
 rm $HOME/.vim/plugged/sonokai/colors/sonokai.vim
-ln -sf $DOT_DIR/fixes/sonokai.vim $HOME/.vim/plugged/sonokai/colors/
+cp $DOT_DIR/fixes/sonokai.vim $HOME/.vim/plugged/sonokai/colors/
 
 #==================================================#
 # anaconda3
