@@ -122,6 +122,7 @@ if [ -d "$HOME/.jupyter" ]; then
         mkdir $HOME/.jupyter/lab/user-settings
     fi
     cp -r $DOT_DIR/jupyterlab_configs/* $HOME/.jupyter/lab/user-settings
+fi
 
 #==================================================#
 # set zsh to the default shell
