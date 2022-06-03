@@ -5,7 +5,6 @@
 # usage : https://stackoverflow.com/questions/7069682/how-to-get-arguments-with-flags-in-bash
 while getopts 'cfu:' flag; do
   case "${flag}" in
-    c) install_conda='true' ;;
     f) forced='true' ;;
     u) update="${OPTARG}" ;;
   esac
@@ -21,14 +20,13 @@ ZSH_CUSTOM=$ZSH/custom
 #==================================================#
 source "$PWD/aliases/misc"
 if [ "$forced" != "true" ]; then
-    buo .Xmodmap .vim .vimrc .tmux.conf .aliases .gitconfig .gitconfig.secret .condarc .zshrc .oh-my-zsh .fzf
+    buo .Xmodmap .vim .vimrc .tmux.conf .aliases .gitconfig .gitconfig.secret .zshrc .oh-my-zsh .fzf
 fi
 ln -sf $DOT_DIR/Xmodmap $HOME/.Xmodmap # key mapping 
 ln -sf $DOT_DIR/vimrc $HOME/.vimrc # vim confnigs
 ln -sf $DOT_DIR/tmux.conf $HOME/.tmux.conf # tmux configs
 ln -sf $DOT_DIR/aliases $HOME/.aliases # zsh aliases
 ln -sf $DOT_DIR/gitconfig $HOME/.gitconfig # git configs
-ln -sf $DOT_DIR/condarc $HOME/.condarc # conda configs
 ln -sf $DOT_DIR/zshrc $HOME/.zshrc # zsh configs
 echo; echo '** download oh-my-zsh.'
 bash $DOT_DIR/install-omz.sh; 
@@ -91,23 +89,6 @@ rm $HOME/.vim/plugged/sonokai/colors/sonokai.vim
 cp $DOT_DIR/fixes/sonokai.vim $HOME/.vim/plugged/sonokai/colors/
 
 #==================================================#
-# anaconda3
-if [ "$install_conda" = "true" ]; 
-then
-    source "$PWD/aliases/conda"
-    if [ $(checkconda) = "true" ]; then
-        echo; echo "** anaconda already exists."
-    else
-        echo; echo "** anaconda does not exist. download anaconda3."
-        wget https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh -O anaconda.sh
-        echo; echo "** install anaconda3."
-        bash anaconda.sh -b -p $HOME/anaconda3
-        rm anaconda.sh
-        #conda update conda --yes
-        #conda update anaconda --yes
-    fi
-fi
-
 # jupyterlab configs
 if [ -d "$HOME/.jupyter" ]; then
     pip install theme-darcula
