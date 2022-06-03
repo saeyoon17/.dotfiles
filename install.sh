@@ -90,7 +90,11 @@ cp $DOT_DIR/fixes/sonokai.vim $HOME/.vim/plugged/sonokai/colors/
 
 #==================================================#
 # jupyterlab configs
-if [ -d "$HOME/.jupyter" ]; then
+pip show jupyter 1>/dev/null
+if [ $? == 0 ]; then
+    if ! [ -d "$HOME/.jupyter" ]; then
+        mkdir "$HOME/.jupyter"
+    fi
     pip install theme-darcula
     pip install jupyterlab-lsp
     pip install flake8 importlib-metadata --upgrade
