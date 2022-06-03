@@ -52,7 +52,7 @@ HIST_STAMPS="mm/dd/yyyy"    # history with date stamps
 plugins=(
   zsh-syntax-highlighting
   zsh-autosuggestions
-  copydir
+  copypath
   copybuffer
   dirhistory
   history
