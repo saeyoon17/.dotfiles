@@ -46,7 +46,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$ZSH/cu
 git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
 $HOME/.fzf/install --all
 ## zsh theme
-git clone https://github.com/spaceship-prompt/spaceship-prompt.git@3.16.7 "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+git clone --branch v3.16.7 https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 ## zsh theme fix
 rm $HOME/.oh-my-zsh/custom/themes/spaceship-prompt/lib/section.zsh
