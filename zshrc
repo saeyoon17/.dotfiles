@@ -10,7 +10,7 @@ export ZSH=$HOME/.oh-my-zsh # oh-my-zsh
 export LC_CTYPE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export MYDOTFILES=$HOME/.dotfiles
+export MYDOTFILES=$HOME/dotfiles
 
 
 #==================================================#
@@ -109,3 +109,6 @@ function fzfv()
 
 # remove duplicates in PATH
 export PATH="$(echo -n $PATH | awk -v RS=: -v ORS=: '!arr[$0]++')"
+
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
