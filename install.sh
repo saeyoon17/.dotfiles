@@ -33,25 +33,25 @@ bash $DOT_DIR/install-omz.sh;
 # ln -sf $DOT_DIR/themes/mrtazz_custom.zsh-theme $HOME/.oh-my-zsh/themes/
 
 
-#==================================================#
-# download useful plugins
+==================================================#
+ download useful plugins
 
-# # zsh
-# echo; echo '** download zsh plugins.'
-# ## zsh-syntax-highlighting 
-# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$ZSH/custom}/plugins/zsh-syntax-highlighting
-# ## zsh-autosuggestions
-# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$ZSH/custom}/plugins/zsh-autosuggestions
-# ## fzf
-# git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
-# $HOME/.fzf/install --all
-# ## zsh theme
-# git clone --branch v3.16.7 https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
-# ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
-# ## zsh theme fix
-# rm $HOME/.oh-my-zsh/custom/themes/spaceship-prompt/lib/section.zsh
-# ln -sf $DOT_DIR/fixes/section.zsh $HOME/.oh-my-zsh/custom/themes/spaceship-prompt/lib/
-# cp $DOT_DIR/fixes/cuda.zsh $HOME/.oh-my-zsh/custom/themes/spaceship-prompt/sections/
+ # zsh
+ echo; echo '** download zsh plugins.'
+ ## zsh-syntax-highlighting 
+ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$ZSH/custom}/plugins/zsh-syntax-highlighting
+ ## zsh-autosuggestions
+ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$ZSH/custom}/plugins/zsh-autosuggestions
+ ## fzf
+ git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
+ $HOME/.fzf/install --all
+ ## zsh theme
+ git clone --branch v3.16.7 https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+ ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+ ## zsh theme fix
+ rm $HOME/.oh-my-zsh/custom/themes/spaceship-prompt/lib/section.zsh
+ ln -sf $DOT_DIR/fixes/section.zsh $HOME/.oh-my-zsh/custom/themes/spaceship-prompt/lib/
+ cp $DOT_DIR/fixes/cuda.zsh $HOME/.oh-my-zsh/custom/themes/spaceship-prompt/sections/
 
 
 # # vim 
