@@ -88,29 +88,29 @@ vim +'PlugInstall --sync' +qa
 rm $HOME/.vim/plugged/sonokai/colors/sonokai.vim
 cp $DOT_DIR/fixes/sonokai.vim $HOME/.vim/plugged/sonokai/colors/
 
-##==================================================#
-## jupyterlab configs
-#pip show jupyter 1>/dev/null
-#if [ $? == 0 ]; then
-#    if ! [ -d "$HOME/.jupyter" ]; then
-#        mkdir "$HOME/.jupyter"
-#    fi
-#    pip install theme-darcula
-#    pip install jupyterlab-lsp
-#    pip install flake8 importlib-metadata --upgrade
-#    pip install 'python-lsp-server[all]'
-#    pip install git+https://github.com/krassowski/python-language-server.git@main
-#    if ! [ -d "$HOME/.jupyter/lab" ]; then
-#        mkdir $HOME/.jupyter/lab
-#    fi
-#    if ! [ -d "$HOME/.jupyter/lab/user-settings" ]; then
-#        mkdir $HOME/.jupyter/lab/user-settings
-#    fi
-#    cp -r $DOT_DIR/jupyterlab_configs/* $HOME/.jupyter/lab/user-settings
-#fi
+#==================================================#
+# jupyterlab configs
+pip show jupyter 1>/dev/null
+if [ $? == 0 ]; then
+    if ! [ -d "$HOME/.jupyter" ]; then
+        mkdir "$HOME/.jupyter"
+    fi
+    pip install theme-darcula
+    pip install jupyterlab-lsp
+    pip install flake8 importlib-metadata --upgrade
+    pip install 'python-lsp-server[all]'
+    pip install git+https://github.com/krassowski/python-language-server.git@main
+    if ! [ -d "$HOME/.jupyter/lab" ]; then
+        mkdir $HOME/.jupyter/lab
+    fi
+    if ! [ -d "$HOME/.jupyter/lab/user-settings" ]; then
+        mkdir $HOME/.jupyter/lab/user-settings
+    fi
+    cp -r $DOT_DIR/jupyterlab_configs/* $HOME/.jupyter/lab/user-settings
+fi
 
-##==================================================#
-## set zsh to the default shell
-#echo; echo '** set ZSH as default shell.'
-#echo "exec zsh" >> $HOME/.bash_profile
-#exec zsh
+#==================================================#
+# set zsh to the default shell
+echo; echo '** set ZSH as default shell.'
+echo "exec zsh" >> $HOME/.bash_profile
+exec zsh
