@@ -59,7 +59,7 @@ plugins=(
   fzf
 )
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 setopt nosharehistory # do not share command line history across tmux windows/panes
 
 # https://stackoverflow.com/questions/20512957/zsh-new-line-prompt-after-each-command
