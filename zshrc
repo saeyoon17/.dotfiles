@@ -21,7 +21,7 @@ export TERM='xterm-256color' # terminal color
 #==================================================#
 ### zsh settings
 
-export LS_COLORS=$(cat $MYDOTFILES/LS_COLORS)
+#export LS_COLORS=$(cat $MYDOTFILES/LS_COLORS)
 
 # OH-MY-ZSH
 # themes: https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
